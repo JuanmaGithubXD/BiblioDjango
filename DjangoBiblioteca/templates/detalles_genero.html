@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del genero</title>
+</head>
+<body>
+
+        <h1>Libros con el género "{{ genre.name }}"</h1>
+
+        <ul>
+            <li>Libros con este género:</li>
+            <ol>
+                {% for book in genre.book_set.all %}
+                    <li><a href="{% url 'books:detalles_libro' book.id %}">{{ book.title }}</a></li>
+                {% endfor %}
+            </ol>
+        </ul>
+
+</body>
+</html>

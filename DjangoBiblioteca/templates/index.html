@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina principal</title>
+</head>
+<body>
+
+    <h1>Bienvenido a la pagina principal</h1>
+    <ul>
+        <li>Libros principales:</li>
+        <ul>
+            {% for book in books %}
+                <li><a href="{% url 'books:detalles_libro' book.id %}">{{ book.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </ul>
+
+</body>
+</html>  

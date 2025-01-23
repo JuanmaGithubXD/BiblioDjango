@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del libro</title>
+</head>
+<body>
+
+    <h1>{{book.title}}</h1>
+    
+    <ul>
+       <li>Autor: </li>
+       <ul>
+           {% for autor in book.author.all %}
+                <li><a href="{% url 'books:detalles_autor' autor.id %}">{{ autor.first_name }} {{ autor.last_name }} </a></li>
+                <button><a href="{% url 'books:lista_autor' %}">Lista de autores</a></button>
+           {% endfor %} 
+       </ul>
+        <br>
+        <li>Género: {{ book.genre.name }}</li>
+        <button><a href="{% url 'books:lista_genero' %}">Lista de géneros</a></button>
+        <br>
+        <li>Resumen: {{ book.summary }}</li>
+        <li>Fecha de publicación: {{ book.publish_date }}</li>
+    </ul>
+
+    <button><a href="../">Volver a la pagina principal</a></button>
+
+</body>
+</html>
