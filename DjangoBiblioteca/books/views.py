@@ -34,3 +34,5 @@ def author_detail(request, author_id):
     return render(request, "detalles_autor.html", context={"author":author})
 
 
+
+
